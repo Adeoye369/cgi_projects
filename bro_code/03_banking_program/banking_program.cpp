@@ -1,4 +1,6 @@
 #include <iostream>
+#include <iomanip>
+#include <stdio.h>
 
 using std::cin;
 using std::cout;
@@ -11,7 +13,7 @@ double deposit(double);
 int main()
 {
     // Display account detail;
-    double balance = 0.0;
+    double balance = 2455.5;
     double amount = 0.0;
     int user_input;
     do
@@ -53,7 +55,21 @@ int main()
 
 void showBalance(double balance)
 {
-    cout << "Your balance is : " << balance << "\n";
+    cout << "Your balance is : $" << std::setprecision(2) << std::fixed << balance << "\n\n";
+
+    char input;
+    do
+    {
+        cout << "\n Do you want to continue (Y/N):";
+        cin >> input;
+        if (input == 'Y')
+            return;
+        else
+        {
+            cout << "Thanks for Visiting! Good bye!\n";
+            exit(EXIT_SUCCESS);
+        }
+    } while (input != 'Y' || input != 'N');
 }
 
 double withdraw(double amount)
@@ -63,5 +79,6 @@ double withdraw(double amount)
 
 double deposit(double amount)
 {
-    return 0.0;
+    cout << "You are depositing a certain amount of: $" << std::setprecision(3) << std::fixed << amount << "\n";
+    return amount;
 }
