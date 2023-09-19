@@ -19,6 +19,8 @@ int main()
     do
     {
         cout << "====    Banking App    ====\n";
+        cout << "Welcome to Our Banking App \n";
+        cout << "Your balance is $" << std::setprecision(2) << std::fixed << balance << "\n";
         cout << "PRESS: \n";
         cout << "1. Check Balance\n";
         cout << "2. To Deposit\n";
@@ -36,15 +38,44 @@ int main()
         case 2:
             cout << "Enter your deposit Amount: ";
             cin >> amount;
-            balance += deposit(amount);
+
+            // Check if amount is positive value
+            if (amount > 0)
+            {
+                balance += deposit(amount);
+                showBalance(balance);
+            }
+            else
+            {
+                cout << "Amount is not valid\n";
+            }
+
             break;
+
         case 3:
             cout << "Enter your withdrawal Amount:";
             cin >> amount;
-            balance -= withdraw(amount);
+            // check if amount is positive
+            if (amount > 0)
+            {
+                if (amount > balance)
+                {
+                    cout << "Insufficient balance \n";
+                    showBalance(balance);
+                    break;
+                }
+                balance -= withdraw(amount);
+                showBalance(balance);
+            }
+            else
+            {
+                cout << "Amount is not valid\n";
+            }
             break;
+
         case 4:
             cout << "Thanks for Visiting! Good bye!\n";
+            cout << "===============================\n\n";
             break;
 
         default:
@@ -64,17 +95,19 @@ void showBalance(double balance)
         cin >> input;
         if (input == 'Y')
             return;
-        else
+        if (input == 'N')
         {
             cout << "Thanks for Visiting! Good bye!\n";
             exit(EXIT_SUCCESS);
         }
+
     } while (input != 'Y' || input != 'N');
 }
 
 double withdraw(double amount)
 {
-    return 0.0;
+    cout << "You are withdrawing a certain amount of: $" << std::setprecision(3) << std::fixed << amount << "\n";
+    return amount;
 }
 
 double deposit(double amount)
