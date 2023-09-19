@@ -29,6 +29,8 @@ int main()
 
         cout << " \n==> Enter your option: ";
         cin >> user_input;
+        cin.clear(); // Restore our input buffer
+        fflush(stdin);
 
         switch (user_input)
         {
