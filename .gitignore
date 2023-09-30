@@ -1,6 +1,9 @@
 #Project wide
-tasks.json
+!tasks.json
 settings.json
+
+# Directorys
+__Resources*
 
 # Prerequisites
 *.d
