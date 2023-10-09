@@ -4,6 +4,10 @@ settings.json
 
 # Directorys
 __Resources*
+*/library/glfw/*.md
+*/library/glfw/docs
+*/library/glm/glm/detail
+*/library/glm/doc
 
 # Prerequisites
 *.d
@@ -39,3 +43,23 @@ __Resources*
 *.exe
 *.out
 *.app
+
+# Cmake ignores
+*/build
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+*.cmake
+*.log
+
+*.html
+*.json
+*.vcxproj*

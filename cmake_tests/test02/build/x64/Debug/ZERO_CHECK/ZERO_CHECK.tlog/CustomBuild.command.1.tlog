@@ -1,0 +1,10 @@
+^C:\PROJECTS\CMAKE_TESTS\TEST02\BUILD\CMAKEFILES\CD49B6009FE2F08ABFF040AB4ECCE119\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Projects/cmake_tests/test02 -BC:/Projects/cmake_tests/test02/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Projects/cmake_tests/test02/build/test02.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
